@@ -1,0 +1,10 @@
+{
+	"auth": {
+		"videome950d9a52": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": [],
+			"customAuth": false
+		}
+	}
+}

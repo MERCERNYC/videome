@@ -4,6 +4,18 @@ import youtube from '../apis/youtube';
 import VideoList from './VideoList';
 import VideoDetail from './VideoDetail'
 
+import Amplify from 'aws-amplify';
+import aws_exports from './aws-exports';
+import { withAuthenticator } from 'aws-amplify-react';  
+
+Amplify.configure(aws_exports);
+
+
+
+
+
+
+
 class App extends React.Component {
 
     state = { videos: [], selectedVideo: null };
@@ -52,5 +64,9 @@ class App extends React.Component {
         );
     }
 }
-export default App; 
-
+export default withAuthenticator(App, {
+    includeGreetings: true,
+    signUpConfig: {
+    hiddenDefaults: ['phone_number']
+  }
+});

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import SearchBar from './SearchBar'; 
 import youtube from '../apis/youtube';
 import VideoList from './VideoList';
@@ -26,12 +26,6 @@ const App = () => {
 
     };
 
-
-    const onVideoSelect = video => {
-        // console.log("from the app", video);
-        setSelectedVideo(video);
-    };
-
     return (
         <div className="ui container">
             <SearchBar onFormSubmit={onTermSubmit}/>
@@ -42,7 +36,7 @@ const App = () => {
                 </div>
                 <div className='five wide column'>
                 <VideoList 
-                onVideoSelect={onVideoSelect} 
+                onVideoSelect={setSelectedVideo} 
                 videos={videos}      
                 />
             </div>  

@@ -9,7 +9,7 @@ const SearchBar = ({ onFormSubmit }) => {
 
     const onSubmit = event => {
         event.preventDefault();
-        //make sure we call from parent component
+       
         onFormSubmit(term)
     };
 
